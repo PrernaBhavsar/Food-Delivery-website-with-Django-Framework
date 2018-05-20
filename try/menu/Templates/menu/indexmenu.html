@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Omnifood is a premium food delivery service with a mission to bring affordable and healthy meals to as many people as possible.">
+         <link rel="stylesheet" type="text/css" href="{% static 'menu1/vendors/css/grid.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'menu1/vendors/css/normalize.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'menu1/resources/css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'menu1/resources/css/queries.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'menu1/vendors/css/animate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'menu1/vendors/css/ionicons.min.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet" type="text/css">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'menu1/resources/favicons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'menu1/resources/favicons/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'menu1/resources/favicons/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'menu1/resources/favicons/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static 'menu1/resources/favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <title>Omni Food</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="row">
+                    <ul class="main-nav js--main-nav">
+                        <li><a href="/main/">Log Out</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                </div>
+            </nav>
+            <div class="row">
+                <h2>Your Menu, Order Now!</h2>
+            </div>
+            
+            <div class="row">
+                
+                <form method="post" action="{% url 'index' found.id %}" class="contact-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="find-us">Menu</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <select name="order" id="find-us">
+                                <option value="Smoked Chipotle Rice" selected>Smoked Chipotle Rice</option>
+                                <option value="Baked Beans with Vegetables">Baked Beans with Vegetables</option>
+                                <option value="Simple italian pizza with cherry tomatoes">Simple italian pizza with cherry tomatoes</option>
+                                <option value="Autumn pumpkin soup">Autumn pumpkin soup</option>
+                                <option value="Caesar Salad">Caesar Salad</option>
+                                <option value="Granola with cherries and strawberries">Granola with cherries and strawberries</option>
+                                <option value="Black Bean Tacos With Olives">Black Bean Tacos With Olives</option>
+                                <option value="Hummus and Pita bread">Hummus and Pita bread</option>
+                                <option value="Lentil and Charred Broccoli Chaat">Lentil and Charred Broccoli Chaat</option>
+                                <option value="Blue Corn Breakfast Tacos With Scrambled Eggs"> Blue Corn Breakfast Tacos With Scrambled Eggs</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Plan</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <label for="name">{{found.plan}}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Total</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                                <label for="name">{{found.total}}$/meal</label>
+                        </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value="Confirm Order">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            
+        </header>
+        
+        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{% static 'menu1/vendors/js/jquery.waypoints.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
+        <script src="{% static 'resources/js/script.js' %}"></script>
+        
+    </body>
+    
+</html>

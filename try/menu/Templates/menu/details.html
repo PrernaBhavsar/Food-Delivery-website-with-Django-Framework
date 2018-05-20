@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Omnifood is a premium food delivery service with a mission to bring affordable and healthy meals to as many people as possible.">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendors/css/grid.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendors/css/normalize.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'resources/css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'resources/css/queries.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendors/css/animate.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendors/css/ionicons.min.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet" type="text/css">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'resources/favicons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'resources/favicons/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'resources/favicons/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'resources/favicons/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static 'resources/favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <title>Omni Food</title>
+    </head>
+    <body>
+        <section class="section-form">
+            <div class="row">
+                <h2>Welcome,Your Profile!</h2>
+            </div>
+            
+            <div class="row">
+                
+                <form method="post" action="#" class="contact-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name" class="labl"><strong>FIRST NAME</strong></label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <label class="labl">{{found.first_name}}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name" class="labl"><STRONG>LAST NAME</STRONG></label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <label class="labl">{{found.last_name}}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label class="labl"><strong>EMAIL</strong></label>
+                        </div>
+                        <div class="col span-2-of-3">
+                        	<label class="labl">{{found.email}}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name" class="labl" ><strong>ADDRESS</strong></label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <label class="labl">{{found.address}}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name" class="labl"><strong>CITY</strong></label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <label class="labl">{{found.city}}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name" class="labl"><strong>PINCODE</strong></label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <label class="labl">{{found.pin}}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name" class="labl"><strong>PLAN</strong></label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <label class="labl">{{found.plan}}</label>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <div class="row">
+                         <div class="col span-3-of-12">
+                           <a href="/main/" class="btn btn-full">Log Out</a>
+                        </div>
+                        <div class="col span-1-of-12">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-5-of-12">
+                           <a href="{% url 'index' found.id %}" class="btn btn-full">View Order details</a>
+                        </div>
+                    </div>
+
+                    <!--Original-->
+                    <!--<div class="row">-->
+                        <!--<div class="col span-1-of-3">-->
+                            <!--<label>&nbsp;</label>-->
+                        <!--</div>-->
+                        <!--<div class="col span-2-of-3">-->
+                           <!--<a href="/main/" class="btn btn-full">Log Out</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    
+                </form>
+            </div>
+        </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
+    <script src="{% static 'resources/js/script.js' %}"></script>
+        
+    </body>
+    
+</html>
